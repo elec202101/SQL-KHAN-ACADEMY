@@ -1,0 +1,5 @@
+CREATE TABLE best_books (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
+INSERT INTO best_books VALUES (1, "The Alchemist", 5);
+INSERT INTO best_books VALUES (2, "The Day of the Dryffids", 3);
+INSERT INTO best_books VALUES (3, "Invisible Women", 5);
+SELECT * FROM best_books;

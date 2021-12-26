@@ -1,0 +1,17 @@
+CREATE TABLE floating_lockets_charms (id INTEGER PRIMARY KEY, name TEXT, colour TEXT, quantity INTEGER, supplier TEXT);
+INSERT INTO floating_lockets_charms VALUES (001, "Butterfly", "red", 12, "AB");
+INSERT INTO floating_lockets_charms VALUES (002, "Butterfly", "pink", 8, "AB");
+INSERT INTO floating_lockets_charms VALUES (003, "Butterfly", "purple", 4, "AB");
+INSERT INTO floating_lockets_charms VALUES (004, "Rose", "red", 5, "AB");
+INSERT INTO floating_lockets_charms VALUES (005, "Rose", "black", 1, "AB");
+INSERT INTO floating_lockets_charms VALUES (006, "Daisy", "white", 5, "AB");
+INSERT INTO floating_lockets_charms VALUES (007, "Angel", "pink", 5, "AB");
+INSERT INTO floating_lockets_charms VALUES (008, "Angel", "red", 3, "AB");
+INSERT INTO floating_lockets_charms VALUES (009, "Dog", "red", 4, "AB");
+INSERT INTO floating_lockets_charms VALUES (010, "Dog", "yellow", 1, "AB");
+INSERT INTO floating_lockets_charms VALUES (011, "Dog", "blue", 6, "AB");
+INSERT INTO floating_lockets_charms VALUES (012, "Cat", "red", 2, "AB");
+INSERT INTO floating_lockets_charms VALUES (013, "Cat", "gold", 8, "AB");
+INSERT INTO floating_lockets_charms VALUES (014, "Bird", "white", 10, "AB");
+INSERT INTO floating_lockets_charms VALUES (015, "Bird", "gold", 3, "AB");
+SELECT * FROM floating_lockets_charms WHERE colour == "red" AND quantity >= 10;

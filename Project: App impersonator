@@ -1,0 +1,52 @@
+/* What does the app's SQL look like? */
+CREATE TABLE the_snack_track (id INTEGER PRIMARY KEY, user_name TEXT, day_of_period INTEGER, number_of_snacks INTEGER);
+INSERT INTO the_snack_track VALUES (1, "Anna", 1, 5);
+INSERT INTO the_snack_track VALUES (2, "Sarah", 2, 3);
+INSERT INTO the_snack_track VALUES (3, "Gertrude", 1, 4);
+INSERT INTO the_snack_track VALUES (4, "Savannah", 4, 2);
+INSERT INTO the_snack_track VALUES (5, "Helena", 6, 0);
+INSERT INTO the_snack_track VALUES (6, "Petra", 2, 2);
+INSERT INTO the_snack_track VALUES (7, "Holly", 5, 1);
+INSERT INTO the_snack_track VALUES (8, "Karen", 1, 4);
+INSERT INTO the_snack_track VALUES (9, "Hayley", 4, 2);
+INSERT INTO the_snack_track VALUES (10, "Carrie", 3, 1);
+
+SELECT * FROM the_snack_track;
+
+CREATE TABLE snacks (id INTEGER PRIMARY KEY, user_name TEXT, highest_calories INTEGER, time_of_day INTEGER);
+
+INSERT INTO snacks VALUES (1, "Anna", 124, 2100);
+INSERT INTO snacks VALUES (2, "Sarah", 230, 1730);
+INSERT INTO snacks VALUES (3, "Gertrude", 175, 1805);
+INSERT INTO snacks VALUES (4, "Savannah", 99, 2200);
+INSERT INTO snacks VALUES (5, "Helena", 0, 0);
+INSERT INTO snacks VALUES (6, "Petra", 243, 1655);
+INSERT INTO snacks VALUES (7, "Holly", 147, 2010);
+INSERT INTO snacks VALUES (8, "Karen", 322, 1315);
+INSERT INTO snacks VALUES (9, "Hayley", 206, 1945);
+INSERT INTO snacks VALUES (10, "Carrie", 100, 1615);
+SELECT * FROM snacks;
+
+UPDATE snacks SET time_of_day = 2035 WHERE id=7;
+
+SELECT * FROM snacks;
+
+ALTER TABLE the_snack_track ADD send_alert TEXT;
+
+SELECT * FROM the_snack_track;
+
+SELECT the_snack_track.id, the_snack_track.user_name,day_of_period, number_of_snacks, highest_calories, time_of_day 
+    FROM the_snack_track
+    JOIN snacks
+    WHERE the_snack_track.id = snacks.id;
+    
+DELETE FROM the_snack_track WHERE id=10;
+DELETE FROM snacks WHERE id=10;
+
+SELECT * FROM the_snack_track;
+SELECT * FROM snacks;
+
+SELECT the_snack_track.id, the_snack_track.user_name,day_of_period, number_of_snacks, highest_calories, time_of_day 
+    FROM the_snack_track
+    JOIN snacks
+    WHERE the_snack_track.id = snacks.id;

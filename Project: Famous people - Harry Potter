@@ -1,0 +1,44 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE characters (id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO characters VALUES (1, "Harry Potter");
+INSERT INTO characters VALUES (2, "Ronald Weasley");
+INSERT INTO characters VALUES (3, "Hermione Granger");
+INSERT INTO characters VALUES (4, "Draco Malfoy");
+INSERT INTO characters VALUES (5, "Fred Weasley");
+INSERT INTO characters VALUES (6, "Jeannie Weasley");
+INSERT INTO characters VALUES (7, "Voldermort");
+INSERT INTO characters VALUES (8, "Albus Dumbledore");
+
+SELECT * FROM characters;
+
+CREATE TABLE characters_relations (id INTEGER PRIMARY KEY, name_of_relation INTEGER, type_of_relation TEXT);
+INSERT INTO characters_relations VALUES (1, "Draco Malfoy", "enemy");
+INSERT INTO characters_relations VALUES (2, "Fred Weasley", "brother");
+INSERT INTO characters_relations VALUES (3, "Ronald Weasley", "best friend/husband");
+INSERT INTO characters_relations VALUES (4, "Albus Dumbledore", "headmaster");
+INSERT INTO characters_relations VALUES (5, "Jeannie Weasley", "sister");
+INSERT INTO characters_relations VALUES (6, "Harry Potter", "friend/husband");
+INSERT INTO characters_relations VALUES (7, "Hermione Granger", "enemy");
+INSERT INTO characters_relations VALUES (8, "Voldermort", "former pupil/enemy");
+
+CREATE TABLE houses (id INTEGER PRIMARY KEY, house TEXT);
+INSERT INTO houses VALUES (1, "Gryffindor");
+INSERT INTO houses VALUES (2, "Gryffindor");
+INSERT INTO houses VALUES (3, "Gryffindor");
+INSERT INTO houses VALUES (4, "Slytherin");
+INSERT INTO houses VALUES (5, "Gryffindor");
+INSERT INTO houses VALUES (6, "Gryffindor");
+INSERT INTO houses VALUES (7, "Slytherin");
+INSERT INTO houses VALUES (8, "Gryffindor");
+
+SELECT * FROM houses;
+
+SELECT * FROM characters_relations;
+
+SELECT characters.name, houses.house, characters_relations.name_of_relation, characters_relations.type_of_relation 
+    FROM characters
+    JOIN characters_relations
+    ON characters.id = characters_relations.id
+    JOIN houses
+    ON characters.id = houses.id;
